@@ -111,7 +111,6 @@ public class Gcash {
             System.out.println("----------------------------------------");
             returnMenu();
 
-
         } catch (SQLException e) {
             try {
                 if (thisConnection != null) thisConnection.rollback();
@@ -196,13 +195,8 @@ public class Gcash {
                     transaction.getDate().format(DateTimeFormatter.ofPattern("dd-MMMM-yyyy | hh:mm a"))
             );
         }
-
-
         System.out.println("---------------------------------------------------");
     }
-
-
-
 
     public static void main(String[] args) {
 //        Gcash.con();
@@ -370,7 +364,6 @@ public class Gcash {
     }
 
     public static void returnMenu(){
-
         System.out.println("Do you want to return to the menu?");
         System.out.println("1: Yes");
         System.out.println("2: Exit");
@@ -405,7 +398,6 @@ public class Gcash {
                 System.out.println("Returning to menu...");
                 showMenu();
                 break;
-
             }
         }
     }
