@@ -1,9 +1,9 @@
 package com.ciicc.carlosgo;
 
 public class User {
-    private String firstName, lastName;
-    private float balance;
-    private String email, password;
+    private final String firstName, lastName;
+    private final float balance;
+    private final String email, password;
 
     public User(String firstName, String lastName, float balance, String email, String password) {
         this.firstName = firstName;
@@ -13,14 +13,6 @@ public class User {
         this.password = password;
     }
 
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
-
-    public User() {
-
-    }
 
     public String getFirstName() {
         return firstName;
@@ -41,4 +33,6 @@ public class User {
     public String getPassword() {
         return password;
     }
+
+
 }
