@@ -91,30 +91,30 @@ public class UserAuthentication {
     public int Login(long number, short pin) {
         int id = 0;
 
-         if (number < 9_000_000_000L || number > 10_000_000_000L || String.valueOf(number).matches(".*[a-zA-Z].*")) {
+        if (number < 9_000_000_000L || number > 10_000_000_000L || String.valueOf(number).matches(".*[a-zA-Z].*")) {
             System.out.println("Invalid mobile number. Use 10-digit format like 9213456789.");}
-         else if (String.valueOf(pin).matches(".*[a-zA-Z].*") || !String.valueOf(pin).matches("\\d{4}") || pin < 0) {
-             System.out.println("Invalid PIN. It must be exactly 4 numeric digits.");}
-         else {
-             try (Connection con = con();
-                  Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE))
-             {
-                 String query = "SELECT * FROM users WHERE Number = " + number + " AND PIN = " + pin;
-                 ResultSet rs = statement.executeQuery(query);
-                 if (!rs.next())
-                     System.out.println("Login failed. Please check your number and PIN.");
-                 else {
-                     setId(id = rs.getInt("ID"));
-                     setName(rs.getString("Name"));
-                     setEmail(rs.getString("Email"));
-                     setNumber(rs.getLong("Number"));
-                     setPin(rs.getShort("PIN"));
-                 }
+        else if (String.valueOf(pin).matches(".*[a-zA-Z].*") || !String.valueOf(pin).matches("\\d{4}") || pin < 0) {
+            System.out.println("Invalid PIN. It must be exactly 4 numeric digits.");}
+        else {
+            try (Connection con = con();
+                 Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE))
+            {
+                String query = "SELECT * FROM users WHERE Number = " + number + " AND PIN = " + pin;
+                ResultSet rs = statement.executeQuery(query);
+                if (!rs.next())
+                    System.out.println("Login failed. Please check your number and PIN.");
+                else {
+                    setId(id = rs.getInt("ID"));
+                    setName(rs.getString("Name"));
+                    setEmail(rs.getString("Email"));
+                    setNumber(rs.getLong("Number"));
+                    setPin(rs.getShort("PIN"));
+                }
 
-             } catch (SQLException e) {
-                 System.out.println(e.getLocalizedMessage());
-             }
-         }
+            } catch (SQLException e) {
+                System.out.println(e.getLocalizedMessage());
+            }
+        }
         return id;
     }
 
@@ -136,6 +136,7 @@ public class UserAuthentication {
                     } else {
                         rs.updateShort("PIN", newPin);
                         rs.updateRow();
+                        setPin(newPin);
                         System.out.println("Your PIN has been successfully changed.");
                     }
                 } else {
@@ -165,16 +166,6 @@ public class UserAuthentication {
             System.out.println(e.getLocalizedMessage());
         }
         return connection;
-    }
-
-    public static void main(String[] args) {
-        UserAuthentication userAuth = new UserAuthentication();
-//        userAuth.Registration("Carlos","gocarlos519@gmail.com",9265305606L,(short) 1234);
-//        System.out.println(userAuth.Login(9265305606L, (short) 1234));
-//        System.out.println(userAuth.getName());
-//        userAuth.changePin((short)1234, (short) 1234);
-//        userAuth.logout();
-//        System.out.println(userAuth.getName());
     }
 }
 
