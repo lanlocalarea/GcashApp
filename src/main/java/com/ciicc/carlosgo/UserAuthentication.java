@@ -53,15 +53,13 @@ public class UserAuthentication {
     }
 
     public void Registration(String name, String email, long number, short pin) {
-        if (name == null || name.isEmpty() || email == null || email.isEmpty()) {
+        if (!isValidName(name) || !isValidEmail(email)) {
             System.out.println("All fields are required. Please complete the form.");
-        }else if(!email.contains("@") || !email.contains(".")){
+        } else if (!isEmailFormatValid(email)) {
             System.out.println("Invalid email format. Example: janedoe123@gmail.com");
-        } else if (number < 9_000_000_000L || number > 10_000_000_000L || String.valueOf(number).matches(".*[a-zA-Z].*")) {
+        } else if (!isValidNumber(number)) {
             System.out.println("Invalid mobile number. Use 10-digit format like 9213456789.");
-        } else if (String.valueOf(pin).matches(".*[a-zA-Z].*")) {
-            System.out.println("PIN must contain only numbers.");
-        } else if (!String.valueOf(pin).matches("\\d{4}")) {
+        } else if (!isValidPin(pin)) {
             System.out.println("PIN must be exactly 4 digits with no decimal or letters.");
         } else {
             try (Connection connection = con();
@@ -69,7 +67,7 @@ public class UserAuthentication {
             {
                 String query = "select * from users where Number = " + number;
                 ResultSet rs = statement.executeQuery(query);
-                if (rs.next()){
+                if (rs.next()) {
                     System.out.println("This mobile number is already registered.");
                 } else {
                     String query1 = "select * from users";
@@ -91,13 +89,13 @@ public class UserAuthentication {
     public int Login(long number, short pin) {
         int id = 0;
 
-        if (number < 9_000_000_000L || number > 10_000_000_000L || String.valueOf(number).matches(".*[a-zA-Z].*")) {
-            System.out.println("Invalid mobile number. Use 10-digit format like 9213456789.");}
-        else if (String.valueOf(pin).matches(".*[a-zA-Z].*") || !String.valueOf(pin).matches("\\d{4}") || pin < 0) {
-            System.out.println("Invalid PIN. It must be exactly 4 numeric digits.");}
-        else {
+        if (!isValidNumber(number)) {
+            System.out.println("Invalid mobile number. Use 10-digit format like 9213456789.");
+        } else if (!isValidPin(pin)) {
+            System.out.println("Invalid PIN. It must be exactly 4 numeric digits.");
+        } else {
             try (Connection con = con();
-                 Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE))
+                 Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE))
             {
                 String query = "SELECT * FROM users WHERE Number = " + number + " AND PIN = " + pin;
                 ResultSet rs = statement.executeQuery(query);
@@ -110,7 +108,6 @@ public class UserAuthentication {
                     setNumber(rs.getLong("Number"));
                     setPin(rs.getShort("PIN"));
                 }
-
             } catch (SQLException e) {
                 System.out.println(e.getLocalizedMessage());
             }
@@ -118,20 +115,18 @@ public class UserAuthentication {
         return id;
     }
 
-    public void changePin(short oldPin, short newPin){
-        if (String.valueOf(oldPin).matches(".*[a-zA-Z].*") || !String.valueOf(oldPin).matches("\\d{4}") || oldPin < 0) {
+    public void changePin(short oldPin, short newPin) {
+        if (!isValidPin(oldPin)) {
             System.out.println("Invalid PIN. It must be exactly 4 numeric digits.");
-        }
-        else if (String.valueOf(newPin).matches(".*[a-zA-Z].*") || !String.valueOf(newPin).matches("\\d{4}") || newPin < 0) {
+        } else if (!isValidPin(newPin)) {
             System.out.println("Invalid PIN. It must be exactly 4 numeric digits.");
-        }
-        else {
+        } else {
             try (Connection con = con();
                  Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
                 String query = "SELECT * FROM users WHERE ID = " + getId();
                 ResultSet rs = statement.executeQuery(query);
                 if (rs.next()) {
-                    if (rs.getShort("PIN") != oldPin){
+                    if (rs.getShort("PIN") != oldPin) {
                         System.out.println("The current PIN you entered is incorrect.");
                     } else {
                         rs.updateShort("PIN", newPin);
@@ -148,24 +143,43 @@ public class UserAuthentication {
         }
     }
 
-    public void logout(){
+    public void logout() {
         System.out.println("User " + getName() + " has successfully logged out.");
         setId(0);
         setName(null);
         setEmail(null);
         setNumber(0);
-        setPin((short)0);
+        setPin((short) 0);
     }
 
-    private static Connection con(){
+    static boolean isValidName(String name) {
+        return name != null && !name.isEmpty();
+    }
+
+    static boolean isValidEmail(String email) {
+        return email != null && !email.isEmpty();
+    }
+
+    static boolean isEmailFormatValid(String email) {
+        return email.contains("@") && email.contains(".");
+    }
+
+    static boolean isValidNumber(long number) {
+        return number >= 9_000_000_000L && number < 10_000_000_000L && !String.valueOf(number).matches(".*[a-zA-Z].*");
+    }
+
+    static boolean isValidPin(short pin) {
+        String pinStr = String.valueOf(pin);
+        return pinStr.matches("\\d{4}");
+    }
+
+    private static Connection con() {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-//            System.out.println("Connection Successful");
         } catch (SQLException e) {
             System.out.println(e.getLocalizedMessage());
         }
         return connection;
     }
 }
-
