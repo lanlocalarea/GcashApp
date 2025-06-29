@@ -17,7 +17,9 @@ public class Main {
 //        String currentBalance = df.format(balance.checkBalance(userAuth.getId()));
         System.out.println(userAuth.getName() + " balance is: Php " + df.format(balance.checkBalance(userID)));
         CashIn cashIn = new CashIn();
-        cashIn.cashIn(userID, 100, 9265305606L);
+        cashIn.cashIn(userID, 200, 9265305606L);
+        System.out.println(userAuth.getName() + " balance is: Php " + df.format(balance.checkBalance(userID)));
+        cashIn.cashIn(userID, 300, 9265305606L);
         System.out.println(userAuth.getName() + " balance is: Php " + df.format(balance.checkBalance(userID)));
     }
 }

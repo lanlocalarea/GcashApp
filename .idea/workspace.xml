@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Test for UserAuthentication and CheckBalance class.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/CashIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Workspace update">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/UserAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/UserAuthentication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +86,39 @@
       <option name="project" value="LOCAL" />
       <updated>1751136951805</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Job Sheet 2-1: UserAuthentication class. (Refactored)">
+      <option name="closed" value="true" />
+      <created>1751184743147</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751184743147</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Job Sheet 2-3: CashIn class.">
+      <option name="closed" value="true" />
+      <created>1751184792531</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751184792531</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Test for new CashIn class.">
+      <option name="closed" value="true" />
+      <created>1751184821147</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751184821147</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Workspace update">
+      <option name="closed" value="true" />
+      <created>1751184843038</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751184843038</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,14 +136,18 @@
     <MESSAGE value="Job Sheet 2-1: UserAuthentication class." />
     <MESSAGE value="Job Sheet 2-2: CheckBalance class." />
     <MESSAGE value="Test for UserAuthentication and CheckBalance class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Test for UserAuthentication and CheckBalance class." />
+    <MESSAGE value="Job Sheet 2-1: UserAuthentication class. (Refactored)" />
+    <MESSAGE value="Job Sheet 2-3: CashIn class." />
+    <MESSAGE value="Test for new CashIn class." />
+    <MESSAGE value="Workspace update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java</url>
-          <line>22</line>
+          <line>24</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
