@@ -13,8 +13,11 @@ public class Main {
 //        userAuth.logout();
 //        System.out.println(userAuth.getName());
         CheckBalance balance = new CheckBalance();
-        userAuth.Login(9265305606L, (short) 1234);
-        String currentBalance = df.format(balance.checkBalance(userAuth.getId()));
-        System.out.println(userAuth.getName() + " balance is: Php " + currentBalance);
+        int userID = userAuth.Login(9265305606L, (short) 1234);
+//        String currentBalance = df.format(balance.checkBalance(userAuth.getId()));
+        System.out.println(userAuth.getName() + " balance is: Php " + df.format(balance.checkBalance(userID)));
+        CashIn cashIn = new CashIn();
+        cashIn.cashIn(userID, 100, 9265305606L);
+        System.out.println(userAuth.getName() + " balance is: Php " + df.format(balance.checkBalance(userID)));
     }
 }
