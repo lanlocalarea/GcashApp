@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/UserAuthentication.java" afterDir="false" />
+    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Test for UserAuthentication and CheckBalance class.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/CashIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/UserAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/UserAuthentication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lanlocalarea&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lanlocalarea/GcashApp.git&quot;,
+    &quot;accountId&quot;: &quot;d6a69116-c324-40ff-99e3-a2d9e7220034&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -38,6 +47,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.UserAuthentication.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -55,14 +65,56 @@
       <option name="presentableId" value="Default" />
       <updated>1750872840456</updated>
     </task>
+    <task id="LOCAL-00001" summary="Job Sheet 2-1: UserAuthentication class.">
+      <option name="closed" value="true" />
+      <created>1751136775662</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751136775662</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Job Sheet 2-2: CheckBalance class.">
+      <option name="closed" value="true" />
+      <created>1751136876165</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751136876165</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Test for UserAuthentication and CheckBalance class.">
+      <option name="closed" value="true" />
+      <created>1751136951805</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751136951805</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Job Sheet 2-1: UserAuthentication class." />
+    <MESSAGE value="Job Sheet 2-2: CheckBalance class." />
+    <MESSAGE value="Test for UserAuthentication and CheckBalance class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test for UserAuthentication and CheckBalance class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java</url>
-          <line>6</line>
+          <line>22</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
