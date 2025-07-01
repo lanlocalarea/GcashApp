@@ -1,6 +1,7 @@
 package com.ciicc.carlosgo;
 
 import java.sql.*;
+import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 
 public class CashIn {
@@ -8,9 +9,13 @@ public class CashIn {
     private static final String dbUsername = "root";
     private static final String dbPassword = "";
 
+    //Cash In deducts from the number inputted and add to itself.
+
     public void cashIn(int id, float amount, long fromNumber) {
+        DecimalFormat df = new DecimalFormat("#,##0.00");
+
         if (amount <= 0) {
-            System.out.println("Amount should not be less than or equal to 0");
+            System.out.println("Amount should not be less than or equal to 0.");
             return;
         }
 
@@ -25,7 +30,7 @@ public class CashIn {
             String query = "SELECT * FROM users WHERE id = " + id;
             ResultSet rs = statement.executeQuery(query);
             if (!rs.next()) {
-                System.out.println("Recipient user not found");
+                System.out.println("Recipient user not found.");
                 return;
             }
 
@@ -34,7 +39,7 @@ public class CashIn {
             String query1 = "SELECT * FROM users WHERE Number = " + fromNumber;
             ResultSet rs1 = statement.executeQuery(query1);
             if (!rs1.next()) {
-                System.out.println("Sender user not found");
+                System.out.println("Sender user not found.");
                 return;
             }
 
@@ -43,13 +48,13 @@ public class CashIn {
             String query2 = "SELECT * FROM balance WHERE user_ID = " + fromID;
             ResultSet rs2 = statement.executeQuery(query2);
             if (!rs2.next()) {
-                System.out.println("Sender balance record not found");
+                System.out.println("Sender balance record not found.");
                 return;
             }
 
             float fromBalance = rs2.getFloat("amount");
             if (fromBalance < amount) {
-                System.out.println("Sender has insufficient balance");
+                System.out.println("Sender has insufficient balance.");
                 return;
             }
 
@@ -59,7 +64,7 @@ public class CashIn {
             String query3 = "SELECT * FROM balance WHERE user_ID = " + id;
             ResultSet rs3 = statement.executeQuery(query3);
             if (!rs3.next()) {
-                System.out.println("Recipient balance record not found");
+                System.out.println("Recipient balance record not found.");
                 return;
             }
 
@@ -79,19 +84,21 @@ public class CashIn {
             rs4.insertRow();
             rs4.moveToCurrentRow();
 
-            System.out.println("Cash-in successful. Amount: " + amount);
+            System.out.println("\n========== Cash-In Successful ==========");
+            System.out.println("From Number  : " + fromNumber);
+            System.out.println("To           : " + toName);
+            System.out.println("Amount       : ₱" + df.format(amount));
+            System.out.println("========================================");
 
         } catch (SQLException e) {
             System.out.println(e.getLocalizedMessage());
         }
-
     }
 
-    private static Connection con(){
+    private static Connection con() {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-//            System.out.println("Connection Successful");
         } catch (SQLException e) {
             System.out.println(e.getLocalizedMessage());
         }
