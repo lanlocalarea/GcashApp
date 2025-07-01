@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Job Sheet 2-3: CashIn class (refactored).">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Transactions.java" afterDir="false" />
+    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Job Sheet 2-5: Transactions class. (Refactored)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" afterDir="false" />
     </list>
@@ -160,7 +159,63 @@
       <option name="project" value="LOCAL" />
       <updated>1751364282690</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Job Sheet 2-5: Transactions class.">
+      <option name="closed" value="true" />
+      <created>1751366770037</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1751366770037</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Testing the new class.">
+      <option name="closed" value="true" />
+      <created>1751366820517</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1751366820517</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Job Sheet 2-1: UserAuthentication class. (Refactored)">
+      <option name="closed" value="true" />
+      <created>1751393141566</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1751393141566</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Job Sheet 2-2: CheckBalance class. (Refactored)">
+      <option name="closed" value="true" />
+      <created>1751393186829</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1751393186829</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Job Sheet 2-3: CashIn class. (Refactored)">
+      <option name="closed" value="true" />
+      <created>1751393251588</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1751393251588</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Job Sheet 2-4: CashTransfer class. (Refactored)">
+      <option name="closed" value="true" />
+      <created>1751393282469</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1751393282469</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Job Sheet 2-5: Transactions class. (Refactored)">
+      <option name="closed" value="true" />
+      <created>1751393496673</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1751393496673</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,7 +233,6 @@
     <MESSAGE value="Job Sheet 2-1: UserAuthentication class." />
     <MESSAGE value="Job Sheet 2-2: CheckBalance class." />
     <MESSAGE value="Test for UserAuthentication and CheckBalance class." />
-    <MESSAGE value="Job Sheet 2-1: UserAuthentication class. (Refactored)" />
     <MESSAGE value="Job Sheet 2-3: CashIn class." />
     <MESSAGE value="Test for new CashIn class." />
     <MESSAGE value="Workspace update" />
@@ -187,6 +241,13 @@
     <MESSAGE value="Job Sheet 2-4: CashTransfer class." />
     <MESSAGE value="Testing new classes if working." />
     <MESSAGE value="Job Sheet 2-3: CashIn class (refactored)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Job Sheet 2-3: CashIn class (refactored)." />
+    <MESSAGE value="Job Sheet 2-5: Transactions class." />
+    <MESSAGE value="Testing the new class." />
+    <MESSAGE value="Job Sheet 2-1: UserAuthentication class. (Refactored)" />
+    <MESSAGE value="Job Sheet 2-2: CheckBalance class. (Refactored)" />
+    <MESSAGE value="Job Sheet 2-3: CashIn class. (Refactored)" />
+    <MESSAGE value="Job Sheet 2-4: CashTransfer class. (Refactored)" />
+    <MESSAGE value="Job Sheet 2-5: Transactions class. (Refactored)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Job Sheet 2-5: Transactions class. (Refactored)" />
   </component>
 </project>
