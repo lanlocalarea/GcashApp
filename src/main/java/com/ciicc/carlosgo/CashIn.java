@@ -29,6 +29,8 @@ public class CashIn {
                 return;
             }
 
+            String toName = rs.getString("Name");
+
             String query1 = "SELECT * FROM users WHERE Number = " + fromNumber;
             ResultSet rs1 = statement.executeQuery(query1);
             if (!rs1.next()) {
@@ -37,7 +39,6 @@ public class CashIn {
             }
 
             int fromID = rs1.getInt("ID");
-            String fromName = rs1.getString("Name");
 
             String query2 = "SELECT * FROM balance WHERE user_ID = " + fromID;
             ResultSet rs2 = statement.executeQuery(query2);
@@ -70,7 +71,7 @@ public class CashIn {
             ResultSet rs4 = statement.executeQuery(query4);
             rs4.moveToInsertRow();
             rs4.updateFloat("amount", amount);
-            rs4.updateString("name", fromName);
+            rs4.updateString("name", toName);
             rs4.updateInt("account_ID", id);
             rs4.updateString("date", String.valueOf(LocalDateTime.now()));
             rs4.updateInt("transferToID", id);
@@ -83,6 +84,7 @@ public class CashIn {
         } catch (SQLException e) {
             System.out.println(e.getLocalizedMessage());
         }
+
     }
 
     private static Connection con(){
