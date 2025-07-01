@@ -34,6 +34,10 @@ public class Main {
 //        cashTransfer.cashTransfer(userID, 300, 9265305607L);
 //        System.out.println(userAuth.getName() + " balance is: Php " + df.format(balance.checkBalance(userID)));
 
+        Transactions transactions = new Transactions();
+//        transactions.viewAll();
+//        transactions.viewUserAll(userID);
+//        transactions.viewTransaction(5);
 
     }
 }

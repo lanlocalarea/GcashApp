@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Job Sheet 2-3: CashIn class (Refactored)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/CashTransfer.java" afterDir="false" />
+    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Job Sheet 2-3: CashIn class (refactored).">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Transactions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/CashIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/CashIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ciicc/carlosgo/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +128,39 @@
       <option name="project" value="LOCAL" />
       <updated>1751184993635</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Job Sheet 2-3: CashIn class (Refactored)">
+      <option name="closed" value="true" />
+      <created>1751362311570</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751362311570</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Job Sheet 2-4: CashTransfer class.">
+      <option name="closed" value="true" />
+      <created>1751362375677</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751362375677</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Testing new classes if working.">
+      <option name="closed" value="true" />
+      <created>1751362515335</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1751362515335</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Job Sheet 2-3: CashIn class (refactored).">
+      <option name="closed" value="true" />
+      <created>1751364282690</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1751364282690</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +184,9 @@
     <MESSAGE value="Workspace update" />
     <MESSAGE value="Testing CashIn class." />
     <MESSAGE value="Job Sheet 2-3: CashIn class (Refactored)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Job Sheet 2-3: CashIn class (Refactored)" />
+    <MESSAGE value="Job Sheet 2-4: CashTransfer class." />
+    <MESSAGE value="Testing new classes if working." />
+    <MESSAGE value="Job Sheet 2-3: CashIn class (refactored)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Job Sheet 2-3: CashIn class (refactored)." />
   </component>
 </project>
