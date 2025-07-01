@@ -1,4 +1,5 @@
 package com.ciicc.carlosgo;
+
 import java.sql.*;
 
 public class UserAuthentication {
@@ -6,50 +7,25 @@ public class UserAuthentication {
     private static final String dbUsername = "root";
     private static final String dbPassword = "";
 
-    private int id;
     private String name;
     private String email;
     private long number;
     private short pin;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public long getNumber() {
         return number;
     }
 
-    public void setNumber(long number) {
-        this.number = number;
-    }
-
     public short getPin() {
         return pin;
-    }
-
-    public void setPin(short pin) {
-        this.pin = pin;
     }
 
     public void Registration(String name, String email, long number, short pin) {
@@ -62,15 +38,15 @@ public class UserAuthentication {
         } else if (!isValidPin(pin)) {
             System.out.println("PIN must be exactly 4 digits with no decimal or letters.");
         } else {
-            try (Connection connection = con();
-                 Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE))
-            {
-                String query = "select * from users where Number = " + number;
+            try (Connection con = con();
+                 Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
+
+                String query = "SELECT * FROM users WHERE Number = " + number;
                 ResultSet rs = statement.executeQuery(query);
                 if (rs.next()) {
                     System.out.println("This mobile number is already registered.");
                 } else {
-                    String query1 = "select * from users";
+                    String query1 = "SELECT * FROM users";
                     ResultSet rs1 = statement.executeQuery(query1);
                     rs1.moveToInsertRow();
                     rs1.updateString("Name", name);
@@ -79,43 +55,64 @@ public class UserAuthentication {
                     rs1.updateShort("PIN", pin);
                     rs1.insertRow();
                     rs1.moveToCurrentRow();
+
+                    String query2 = "SELECT ID FROM users WHERE Number = " + number;
+                    ResultSet rs2 = statement.executeQuery(query2);
+                    if (rs2.next()) {
+                        int newUserId = rs2.getInt("ID");
+
+                        String query3 = "SELECT * FROM balance";
+                        ResultSet rs3 = statement.executeQuery(query3);
+                        rs3.moveToInsertRow();
+                        rs3.updateFloat("amount", 0f);
+                        rs3.updateInt("user_ID", newUserId);
+                        rs3.insertRow();
+                        rs3.moveToCurrentRow();
+
+                        System.out.println("Registration successful.");
+                    } else {
+                        System.out.println("Error retrieving user ID after registration.");
+                    }
                 }
+
             } catch (SQLException e) {
                 System.out.println(e.getLocalizedMessage());
             }
         }
     }
+
 
     public int Login(long number, short pin) {
-        int id = 0;
-
         if (!isValidNumber(number)) {
             System.out.println("Invalid mobile number. Use 10-digit format like 9213456789.");
+            return 0;
         } else if (!isValidPin(pin)) {
             System.out.println("Invalid PIN. It must be exactly 4 numeric digits.");
+            return 0;
         } else {
             try (Connection con = con();
-                 Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE))
-            {
+                 Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
+
                 String query = "SELECT * FROM users WHERE Number = " + number + " AND PIN = " + pin;
                 ResultSet rs = statement.executeQuery(query);
-                if (!rs.next())
-                    System.out.println("Login failed. Please check your number and PIN.");
-                else {
-                    setId(id = rs.getInt("ID"));
-                    setName(rs.getString("Name"));
-                    setEmail(rs.getString("Email"));
-                    setNumber(rs.getLong("Number"));
-                    setPin(rs.getShort("PIN"));
+                if (!rs.next()) {
+//                    System.out.println("Login failed. Please check your number and PIN.");
+                    return 0;
+                } else {
+                    this.name = rs.getString("Name");
+                    this.email = rs.getString("Email");
+                    this.number = rs.getLong("Number");
+                    this.pin = rs.getShort("PIN");
+                    return rs.getInt("ID");
                 }
             } catch (SQLException e) {
                 System.out.println(e.getLocalizedMessage());
+                return 0;
             }
         }
-        return id;
     }
 
-    public void changePin(short oldPin, short newPin) {
+    public void changePin(int userId, short oldPin, short newPin) {
         if (!isValidPin(oldPin)) {
             System.out.println("Invalid PIN. It must be exactly 4 numeric digits.");
         } else if (!isValidPin(newPin)) {
@@ -123,7 +120,8 @@ public class UserAuthentication {
         } else {
             try (Connection con = con();
                  Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
-                String query = "SELECT * FROM users WHERE ID = " + getId();
+
+                String query = "SELECT * FROM users WHERE ID = " + userId;
                 ResultSet rs = statement.executeQuery(query);
                 if (rs.next()) {
                     if (rs.getShort("PIN") != oldPin) {
@@ -131,7 +129,7 @@ public class UserAuthentication {
                     } else {
                         rs.updateShort("PIN", newPin);
                         rs.updateRow();
-                        setPin(newPin);
+                        this.pin = newPin;
                         System.out.println("Your PIN has been successfully changed.");
                     }
                 } else {
@@ -144,12 +142,11 @@ public class UserAuthentication {
     }
 
     public void logout() {
-        System.out.println("User " + getName() + " has successfully logged out.");
-        setId(0);
-        setName(null);
-        setEmail(null);
-        setNumber(0);
-        setPin((short) 0);
+        System.out.println("User " + name + " has successfully logged out.");
+        this.name = null;
+        this.email = null;
+        this.number = 0;
+        this.pin = 0;
     }
 
     static boolean isValidName(String name) {
