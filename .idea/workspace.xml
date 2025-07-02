@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Job Sheet 2-6: Main class.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GcashAppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5e49d20c-2407-4757-a599-53db8a9161dc" name="Changes" comment="Job Sheet Post Assessment: GcashApp unit test." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -260,7 +256,47 @@
       <option name="project" value="LOCAL" />
       <updated>1751393541035</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added JUnit Test dependency.">
+      <option name="closed" value="true" />
+      <created>1751452607559</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1751452607559</updated>
+    </task>
+    <task id="LOCAL-00022" summary="JDK 8">
+      <option name="closed" value="true" />
+      <created>1751452696232</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1751452696232</updated>
+    </task>
+    <task id="LOCAL-00023" summary="JDK 8">
+      <option name="closed" value="true" />
+      <created>1751452724787</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1751452724787</updated>
+    </task>
+    <task id="LOCAL-00024" summary="workspace changes.">
+      <option name="closed" value="true" />
+      <created>1751453000937</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1751453000937</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Job Sheet Post Assessment: GcashApp unit test.">
+      <option name="closed" value="true" />
+      <created>1751453066205</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1751453066205</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,6 +330,10 @@
     <MESSAGE value="Job Sheet 2-4: CashTransfer class. (Refactored)" />
     <MESSAGE value="Job Sheet 2-5: Transactions class. (Refactored)" />
     <MESSAGE value="Job Sheet 2-6: Main class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Job Sheet 2-6: Main class." />
+    <MESSAGE value="Added JUnit Test dependency." />
+    <MESSAGE value="JDK 8" />
+    <MESSAGE value="workspace changes." />
+    <MESSAGE value="Job Sheet Post Assessment: GcashApp unit test." />
+    <option name="LAST_COMMIT_MESSAGE" value="Job Sheet Post Assessment: GcashApp unit test." />
   </component>
 </project>
